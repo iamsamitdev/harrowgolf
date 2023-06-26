@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Harrow Golf Academy</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('../static/images/harrowbkkbg.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Poppins', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bg {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #fff;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-btn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-btn a {
+            text-decoration: none;
+            color: #fff;
+            background-color: teal;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .content-btn a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .or {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            margin: 10px;
+        }
+
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="container">
+        <div class="content">
+            <img src="{% static 'images/harrowlogo.jpg' %}" alt="Harrow Golf Logo" width="100px">
+            <h1>Welcome to Harrow Golf Academy</h1>
+        </div>
+        <div class="content-btn">
+            <a href="{% url 'student-signup' %}">Signup as Student</a><br>
+            <a href="{% url 'school-signup' %}">Signup as School</a>
+        </div>
+        <div class="or">
+            <p>OR</p>
+        </div>
+        <div class="content-btn">
+            <a href="{% url 'login' %}">Sign in</a>
+        </div>
+        <footer>
+            <p>&copy; 2023 Harrow Golf Academy</p>
+        </footer>
+    </div>
+</body>
+</html>
