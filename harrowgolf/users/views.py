@@ -48,13 +48,12 @@ class LoginView(auth_views.LoginView):
 
     def get_success_url(self):
         user = self.request.user
-        if user.is_authenticated:
-            if user.is_teacher:
-                return reverse('school-home')
-            elif user.is_student:
-                return reverse('student-home')
-        else:
+        if not user.is_authenticated:
             return reverse('login')
+        if user.is_teacher:
+            return reverse('school-home')
+        elif user.is_student:
+            return reverse('student-home')
 
 
 def welcome(request):
